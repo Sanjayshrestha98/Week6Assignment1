@@ -15,15 +15,15 @@ import com.example.week6assignment1.R
 class AboutusFragment : Fragment() {
 
     private lateinit var aboutusViewModel: AboutusViewModel
-    private lateinit var webview : WebView
+    private lateinit var webview: WebView
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         aboutusViewModel =
-                ViewModelProvider(this).get(AboutusViewModel::class.java)
+            ViewModelProvider(this).get(AboutusViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_aboutus, container, false)
 
         webview = root.findViewById(R.id.webview)

@@ -7,12 +7,11 @@
     tools:context=".ui.dashboard.AddstudentFragment">
 
     <TextView
+        android:id="@+id/a"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="This is add Student"
-        android:id="@+id/a"
         tools:ignore="MissingConstraints" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,14 +23,11 @@ class LoginActivity : AppCompatActivity() {
 
 
         btnLogin.setOnClickListener {
-            if (etUsername.text.toString() == "a" && etPassword.text.toString() == "a")
-            {
+            if (etUsername.text.toString() == "a" && etPassword.text.toString() == "a") {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
-            }
-            else
-            {
-                    Toast.makeText(this,"Invalid Login",Toast.LENGTH_LONG).show()
+            } else {
+                Toast.makeText(this, "Invalid Login", Toast.LENGTH_LONG).show()
             }
         }
     }
