@@ -1,4 +1,4 @@
-package com.example.week6assignment1.ui.dashboard
+package com.example.week6assignment1.ui.addstudent
 
 import android.os.Bundle
 import android.view.LayoutInflater
