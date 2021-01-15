@@ -26,7 +26,6 @@ class AboutusFragment : Fragment() {
         webview = root.findViewById(R.id.webview)
         webview.loadUrl("https://softwarica.edu.np/")
 
-
         return root
     }
 }
