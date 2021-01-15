@@ -10,14 +10,28 @@
     android:layout_margin="20dp"
     tools:context=".ui.addstudent.AddstudentFragment">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Student Details"
-
+        android:layout_gravity="center"
+        android:textSize="30sp"
         tools:ignore="MissingConstraints" />
 
     <EditText
+        android:id="@+id/etname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -25,14 +39,21 @@
 
 
     <EditText
+        android:id="@+id/etage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="Age"/>
 
-
+    <EditText
+        android:id="@+id/etimage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="ImageURl"/>
 
     <RadioGroup
+        android:id="@+id/rggender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -45,30 +66,39 @@
             />
 
         <RadioButton
+            android:id="@+id/rbmale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Male"/>
+            android:text="Male"
+            tools:ignore="OnClick" />
         <RadioButton
+            android:id="@+id/rbfemale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Female"/>
+            android:text="Female"
+            tools:ignore="OnClick" />
         <RadioButton
+            android:id="@+id/rbothers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Others"/>
+            android:text="Others"
+            tools:ignore="OnClick" />
     </RadioGroup>
 
     <EditText
+        android:id="@+id/etaddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="Address"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:id="@+id/btnsave"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="Save"/>
-
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

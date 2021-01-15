@@ -4,18 +4,22 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RadioButton
+import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.week6assignment1.R
+import com.example.week6assignment1.model.Database
 import com.example.week6assignment1.model.Students
 import de.hdodenhof.circleimageview.CircleImageView
 
+private var database = Database()
+private var listStudents = database.returnStudent()
+
 class StudentAdapter(
-    val lstStudents:ArrayList<Students>,
-    val context: Context
-): RecyclerView.Adapter<StudentAdapter.StudentViewHolder>(){
+    val lstStudents: ArrayList<Students>,
+    val context: Context): RecyclerView.Adapter<StudentAdapter.StudentViewHolder>(){
 
     class StudentViewHolder(view:View): RecyclerView.ViewHolder(view){
         val imgProfile : CircleImageView
@@ -23,6 +27,7 @@ class StudentAdapter(
         val tvAddress:TextView
         val tvage:TextView
         val tvGender:TextView
+        val btndelete:Button
 
         init {
             imgProfile = view.findViewById(R.id.imgProfile)
@@ -30,6 +35,7 @@ class StudentAdapter(
             tvAddress = view.findViewById(R.id.tvaddress)
             tvage = view.findViewById(R.id.tvage)
             tvGender = view.findViewById(R.id.tvgender)
+            btndelete = view.findViewById(R.id.btndelete)
         }
     }
 
@@ -40,11 +46,21 @@ class StudentAdapter(
     }
 
     override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {
-        val actor = lstStudents[position]
-        holder.tvFullname.text = actor.fullname
-        holder.tvAddress.text = actor.address
-        holder.tvage.text = actor.age.toString()
-        Glide.with(context).load(actor.studentImageURL).into(holder.imgProfile)
+        val info = lstStudents[position]
+        holder.tvFullname.text = info.name
+        holder.tvAddress.text = info.address
+        holder.tvGender.text = info.gender
+        holder.tvage.text = info.age.toString()
+        println(info)
+        holder.btndelete.setOnClickListener(View.OnClickListener {
+            listStudents.remove(info)
+            notifyItemRemoved(position)
+            Toast.makeText(context, "Student Deleted", Toast.LENGTH_LONG).show()
+        })
+
+        Glide.with(context)
+            .load(info?.imageURL)
+            .into(holder.imgProfile)
     }
 
     override fun getItemCount(): Int {
