@@ -19,15 +19,16 @@ private var listStudents = database.returnStudent()
 
 class StudentAdapter(
     val lstStudents: ArrayList<Students>,
-    val context: Context): RecyclerView.Adapter<StudentAdapter.StudentViewHolder>(){
+    val context: Context
+) : RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {
 
-    class StudentViewHolder(view:View): RecyclerView.ViewHolder(view){
-        val imgProfile : CircleImageView
-        val tvFullname:TextView
-        val tvAddress:TextView
-        val tvage:TextView
-        val tvGender:TextView
-        val btndelete:Button
+    class StudentViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val imgProfile: CircleImageView
+        val tvFullname: TextView
+        val tvAddress: TextView
+        val tvage: TextView
+        val tvGender: TextView
+        val btndelete: Button
 
         init {
             imgProfile = view.findViewById(R.id.imgProfile)

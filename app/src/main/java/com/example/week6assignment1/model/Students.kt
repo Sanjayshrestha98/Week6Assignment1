@@ -4,12 +4,12 @@ import android.os.Parcel
 import android.os.Parcelable
 
 data class Students(
-    val name:String?=null,
-    val age:Int?=null,
-    val gender:String?=null,
-    val address:String?=null,
-    val imageURL:String?=null
-):Parcelable {
+    val name: String? = null,
+    val age: Int? = null,
+    val gender: String? = null,
+    val address: String? = null,
+    val imageURL: String? = null
+) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readValue(Int::class.java.classLoader) as? Int,
