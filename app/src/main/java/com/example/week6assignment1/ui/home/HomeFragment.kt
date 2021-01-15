@@ -34,11 +34,4 @@ class HomeFragment : Fragment() {
         recyclerView.adapter = adapter
         return root
     }
-//    override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(itemView, savedInstanceState)
-//        recyclerView.apply {
-//            layoutManager = LinearLayoutManager(activity)
-//            adapter = StudentAdapter(activity)
-//        }
-//    }
 }
