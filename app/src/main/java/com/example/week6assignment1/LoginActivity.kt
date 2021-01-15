@@ -21,9 +21,8 @@ class LoginActivity : AppCompatActivity() {
         etUsername = findViewById(R.id.etUsername)
         btnLogin = findViewById(R.id.btnLogin)
 
-
         btnLogin.setOnClickListener {
-            if (etUsername.text.toString() == "a" && etPassword.text.toString() == "a") {
+            if (etUsername.text.toString() == "softwarica" && etPassword.text.toString() == "coventry") {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             } else {
