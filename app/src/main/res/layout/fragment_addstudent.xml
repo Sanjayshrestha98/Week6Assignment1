@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:layout_margin="20dp"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".ui.addstudent.AddstudentFragment">
 
     <ScrollView
@@ -17,88 +16,88 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:layout_gravity="center"
             android:orientation="vertical">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Student Details"
+                android:textSize="30sp"
+                tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Student Details"
-        android:layout_gravity="center"
-        android:textSize="30sp"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/etname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:hint="Full Name"/>
+            <EditText
+                android:id="@+id/etname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="Full Name" />
 
 
-    <EditText
-        android:id="@+id/etage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:hint="Age"/>
+            <EditText
+                android:id="@+id/etage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="Age" />
 
-    <EditText
-        android:id="@+id/etimage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:hint="ImageURl"/>
+            <EditText
+                android:id="@+id/etimage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="ImageURl" />
 
-    <RadioGroup
-        android:id="@+id/rggender"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:gravity="start">
+            <RadioGroup
+                android:id="@+id/rggender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="start">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Select Gender"
-            />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Gender" />
 
-        <RadioButton
-            android:id="@+id/rbmale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Male"
-            tools:ignore="OnClick" />
-        <RadioButton
-            android:id="@+id/rbfemale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Female"
-            tools:ignore="OnClick" />
-        <RadioButton
-            android:id="@+id/rbothers"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Others"
-            tools:ignore="OnClick" />
-    </RadioGroup>
+                <RadioButton
+                    android:id="@+id/rbmale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male"
+                    tools:ignore="OnClick" />
 
-    <EditText
-        android:id="@+id/etaddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:hint="Address"/>
+                <RadioButton
+                    android:id="@+id/rbfemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female"
+                    tools:ignore="OnClick" />
 
-    <Button
-        android:id="@+id/btnsave"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Save"/>
+                <RadioButton
+                    android:id="@+id/rbothers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Others"
+                    tools:ignore="OnClick" />
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/etaddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="Address" />
+
+            <Button
+                android:id="@+id/btnsave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Save" />
         </LinearLayout>
+
     </ScrollView>
 
 </LinearLayout>

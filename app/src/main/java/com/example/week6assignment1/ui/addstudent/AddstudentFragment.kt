@@ -19,15 +19,15 @@ import com.example.week6assignment1.model.Students
 class AddstudentFragment : Fragment() {
 
     private lateinit var addstudentViewModel: AddstudentViewModel
-    private lateinit var etname : EditText
-    private lateinit var etaddress : EditText
-    private lateinit var etage : EditText
-    private lateinit var rggender : RadioGroup
-    private lateinit var btnsave : Button
-    private lateinit var rbmale : RadioButton
-    private lateinit var rbfemale : RadioButton
-    private lateinit var rbothers : RadioButton
-    private lateinit var etimage : EditText
+    private lateinit var etname: EditText
+    private lateinit var etaddress: EditText
+    private lateinit var etage: EditText
+    private lateinit var rggender: RadioGroup
+    private lateinit var btnsave: Button
+    private lateinit var rbmale: RadioButton
+    private lateinit var rbfemale: RadioButton
+    private lateinit var rbothers: RadioButton
+    private lateinit var etimage: EditText
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,7 +37,6 @@ class AddstudentFragment : Fragment() {
         addstudentViewModel =
             ViewModelProvider(this).get(AddstudentViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_addstudent, container, false)
-//        val textView: TextView = root.findViewById(R.id.a)
 
         etname = root.findViewById(R.id.etname)
         etaddress = root.findViewById(R.id.etaddress)
@@ -50,7 +49,6 @@ class AddstudentFragment : Fragment() {
         etimage = root.findViewById(R.id.etimage)
 
         btnsave.setOnClickListener {
-
 
             if (isValid()) {
                 val database = Database()
@@ -75,43 +73,42 @@ class AddstudentFragment : Fragment() {
 //            textView.text = it
             })
         }
-            return root
-        }
-
-        private fun clearFields() {
-            etname.setText("")
-            etage.setText("")
-            rggender.clearCheck()
-            etaddress.setText("")
-            etimage.setText("")
-        }
-
-        private fun isValid(): Boolean {
-            var flag = true
-            if (TextUtils.isEmpty(etname.text)) {
-                etname.error = "Please enter Username"
-                etname.requestFocus()
-                flag = false
-            } else if (TextUtils.isEmpty(etage.text)) {
-                etage.error = "Please enter age"
-                etage.requestFocus()
-                flag = false
-            } else if (TextUtils.isEmpty(etaddress.text)) {
-                etaddress.error = "Please enter address"
-                etaddress.requestFocus()
-                flag = false
-            }
-            else if (TextUtils.isEmpty(etimage.text)) {
-                etimage.error = "Please enter image URL"
-                etimage.requestFocus()
-                flag = false
-            }
-            return flag
-        }
-
-        fun onExit(selectionValue: String) {
-            val intent = Intent()
-            intent.putExtra("selection", selectionValue)
-            targetFragment?.onActivityResult(targetRequestCode, Activity.RESULT_OK, intent)
-        }
+        return root
     }
+
+    private fun clearFields() {
+        etname.setText("")
+        etage.setText("")
+        rggender.clearCheck()
+        etaddress.setText("")
+        etimage.setText("")
+    }
+
+    private fun isValid(): Boolean {
+        var flag = true
+        if (TextUtils.isEmpty(etname.text)) {
+            etname.error = "Please enter Username"
+            etname.requestFocus()
+            flag = false
+        } else if (TextUtils.isEmpty(etage.text)) {
+            etage.error = "Please enter age"
+            etage.requestFocus()
+            flag = false
+        } else if (TextUtils.isEmpty(etaddress.text)) {
+            etaddress.error = "Please enter address"
+            etaddress.requestFocus()
+            flag = false
+        } else if (TextUtils.isEmpty(etimage.text)) {
+            etimage.error = "Please enter image URL"
+            etimage.requestFocus()
+            flag = false
+        }
+        return flag
+    }
+
+    fun onExit(selectionValue: String) {
+        val intent = Intent()
+        intent.putExtra("selection", selectionValue)
+        targetFragment?.onActivityResult(targetRequestCode, Activity.RESULT_OK, intent)
+    }
+}
